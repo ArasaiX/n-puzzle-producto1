@@ -366,7 +366,7 @@ public class PuzzleActivity extends AppCompatActivity{
     public void checkGameOver() {
         if (isGameOver()) {
             time = getChronometer();  //get the time of the game and insert in a long variable
-            if (counter == 1){ //TEST the number 1 is only for test, insert here the final level
+            if (counter == 4){ //TEST the number 1 is only for test, insert here the final level
                 finalJuego(); //jump to the congratulations screen
             }else
                 continuar();    //pass to the next puzzle
@@ -381,56 +381,6 @@ public class PuzzleActivity extends AppCompatActivity{
         Intent intent = new Intent(PuzzleActivity.this, CongratsActivity.class);
         intent.putExtra("tiempo", Tiempo);
         startActivity(intent);
-
-    /*
-       ViewGroup viewGroup = findViewById(R.id.content);
-        Button btn_login;
-        AlertDialog.Builder builder = new AlertDialog.Builder(PuzzleActivity.this);
-        View view1 = LayoutInflater.from(PuzzleActivity.this).inflate(R.layout.activity_dialog, viewGroup, false);
-        builder.setView(view1);
-        btn_login = view1.findViewById(R.id.aceptar);
-        //final EditText editTextName = new EditText(PuzzleActivity.this);
-        EditText editText;
-        editText = findViewById(R.id.nombre);
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // get the data with the
-                // "editText.text.toString()"
-                String text = editText.getText().toString();
-                nombre = text;
-                // check whether the retrieved data is
-                // empty or not based on the emptiness
-                // provide the Toast Message
-                if (nombre.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Please Enter the Data", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), nombre, Toast.LENGTH_SHORT).show();
-
-                }
-            }
-
-        });
-        alertDialog.dismiss();
-
-    */
-
-
-
-
-
-
-       /* AdminSQLiteOpenHelper adminSQLiteOpenHelper = new AdminSQLiteOpenHelper(PuzzleActivity.this);//Crea conexión y BD
-        adminSQLiteOpenHelper.insertar(nombre, chrTxt);//Insertamos datos en BD
-
-        */
-
-      //  setContentView(R.layout.activity_congrats);
-
-       // setContentView(R.id.timeView);
     }
     private boolean isGameOver() {
         for (PuzzlePiece piece : pieces) {
